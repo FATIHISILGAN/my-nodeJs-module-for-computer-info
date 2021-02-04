@@ -13,16 +13,19 @@ let platform =os.platform();
 let hostName = os.hostname();
 
 
-console.log("boştaki ram:"+freeRam);
-console.log("toplam ram:"+totalRam);
-console.log("kullanılan ram:"+usedRam);
-console.log("işlemciler:");
-console.log(cpus);
-console.log("işlemci sayısı:"+cpuCount);
-console.log("platform:"+platform);
-console.log("host adı:"+hostName);
 
 
+
+let printAllPcInfo = function(){
+    console.log("boştaki ram:"+freeRam);
+    console.log("toplam ram:"+totalRam);
+    console.log("kullanılan ram:"+usedRam);
+    console.log("işlemciler:");
+    console.log(cpus);
+    console.log("işlemci sayısı:"+cpuCount);
+    console.log("platform:"+platform);
+    console.log("host adı:"+hostName);
+}
 
 let writeFilePcInfo=function(){
     fs.writeFile('pc_info.txt',getPcInfo(),function(err){
@@ -44,3 +47,15 @@ let getPcInfo=function(){
 
 exports.getPcInfo=getPcInfo;
 exports.writeFilePcInfo=writeFilePcInfo;
+exports.printAllPcInfo=printAllPcInfo;
+exports.totalRam=totalRam;
+exports.freeRam=freeRam;
+exports.usedRam=usedRam;
+exports.cpus=cpus;
+exports.cpuCount=cpuCount;
+exports.platform=platform;
+exports.hostName=hostName;
+
+
+
+
